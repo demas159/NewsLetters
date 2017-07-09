@@ -1,0 +1,3 @@
+RytisNewsLettersBundle:
+    resource: "@RytisNewsLettersBundle/Resources/config/routing.yml"
+    prefix: /

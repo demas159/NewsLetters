@@ -1,0 +1,25 @@
+{% extends 'RytisNewsLettersBundle::layout.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+   <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
+   <link rel="stylesheet" href='{{ asset("/assets/NewsLetters/css/NewsLettersCss.css") }}'>
+{% endblock %}
+{% block body %}
+   <div class="NewsLettersBlock">
+            <h1 id="form_title">Naujienlaiškių formą ;)</h1>
+       <div id="THANKS" style="display:none;">DEKUI!!!! :)</div>
+       {{ form_start(form, {'attr': {'id': 'newsletters_create_form'}}) }}
+       {{ form_widget(form) }}
+       {{ form_end(form) }}
+   </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+   <script src="{{ asset('/assets/NewsLetters/js/anijs.js') }}"></script>
+   <script src="{{ asset('/assets/NewsLetters/js/main.js') }}"></script>
+{% endblock %}

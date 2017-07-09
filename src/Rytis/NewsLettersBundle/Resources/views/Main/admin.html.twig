@@ -1,0 +1,64 @@
+{% extends 'RytisNewsLettersBundle::layout.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/ju-1.11.4/jq-2.2.4/dt-1.10.15/af-2.2.0/r-2.1.1/sc-1.4.2/datatables.min.css"/>
+    <link rel="stylesheet" href='{{ asset("/assets/NewsLetters/css/NewsLettersCss.css") }}'>
+{% endblock %}
+{% block body %}
+
+<table id="table">
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Vardas</th>
+<th>El.Paštas</th>
+<th>Kategorijos</th>
+<th>Veiksmai</th>
+</tr>
+</thead>
+    <tbody>
+    {% for k, v in data %}
+        <tr>
+            <td>  {{ k }}</td>
+            <td>  {{ v.Name }}</td>
+            <td>  {{ v.Email }}</td>
+            <td>  {{ v.Categories }}</td>
+            <td>
+                <a href="{{ path('RytisNewsLettersBundle_AdminLoad') }}" id="{{ k }}" class="EDIT"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a href="{{ path('RytisNewsLettersBundle_AdminDelete') }}" id="{{ k }}" class="DELETE"><i class="fa fa-trash-o" aria-hidden="true"></i></i></a>
+            </td>
+        </tr>
+    {%   endfor %}
+    </tbody>
+</table>
+
+    <div id="dialog" title="Redagavimas">
+
+
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/ju-1.11.4/jq-2.2.4/dt-1.10.15/af-2.2.0/r-2.1.1/sc-1.4.2/datatables.min.js"></script>
+    <script src="https://use.fontawesome.com/5d8b48cf54.js"></script>
+   <script>$(document).ready(function() {
+           $('#table').DataTable( {
+               'paging' : false,
+               "ordering": true,
+           } );
+       } );
+       $('#dialog').dialog({
+           autoOpen: false,
+           width:"350px"
+       });
+   </script>
+    <script src="{{ asset('/assets/NewsLetters/js/main.js') }}"></script>
+{% endblock %}

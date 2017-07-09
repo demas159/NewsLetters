@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+    <title>{% block title %}Rytis Puodzius Testine Uzduotis{% endblock %}</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
+    <![endif]-->
+    {% block stylesheets %}
+        <link href="{{ asset('assets/styles.css') }}" type="text/css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+
+<section id="wrapper">
+    <section class="main-co12">
+        {% block body %}{% endblock %}
+    </section>
+</section>
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

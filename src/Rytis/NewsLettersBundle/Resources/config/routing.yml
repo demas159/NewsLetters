@@ -1,0 +1,28 @@
+RytisNewsLettersBundle_homepage:
+    path:     /
+    defaults: { _controller: "RytisNewsLettersBundle:Main:index" }
+    requirements:
+         methods:  GET
+RytisNewsLettersBundle_create:
+      path:     /create
+      defaults: { _controller: "RytisNewsLettersBundle:Main:create" }
+      requirements:
+        methods:  POST
+RytisNewsLettersBundle_admin:
+    path:     /admin
+    defaults: { _controller: "RytisNewsLettersBundle:Main:admin" }
+RytisNewsLettersBundle_AdminLoad:
+          path:     /admin/load
+          defaults: { _controller: "RytisNewsLettersBundle:Main:load" }
+          requirements:
+            methods:  POST
+RytisNewsLettersBundle_AdminDelete:
+          path:     /admin/delete
+          defaults: { _controller: "RytisNewsLettersBundle:Main:delete" }
+          requirements:
+            methods:  POST
+RytisNewsLettersBundle_AdminUpdate:
+          path:     /admin/update
+          defaults: { _controller: "RytisNewsLettersBundle:Main:update" }
+          requirements:
+            methods:  POST
