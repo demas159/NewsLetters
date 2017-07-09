@@ -1,1 +1,10 @@
-/var/
+composer.phar
+var/*
+app/cache/*
+app/logs/*
+app/config/phpcr.yml
+app/bootstrap.php.cache
+app/app.sqlite
+app/check.php
+app/SymfonyRequirements.php
+bin/
