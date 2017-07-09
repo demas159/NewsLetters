@@ -12,6 +12,8 @@ class Letter
         'KitosNaujienosB' => 'KitosNaujienosB',
         'KitosNaujienosC' => 'KitosNaujienosC',
         'KitosNaujienosD' => 'KitosNaujienosD');
+
+    protected $CreatedDate;
     public function getID()
     {
         return $this->ID;
@@ -49,5 +51,15 @@ class Letter
     public function setCategories($Categories)
     {
         $this->Categories = $Categories;
+    }
+
+    public function getCreatedDate()
+    {
+        return date('Y-m-d H:i');
+    }
+
+    public function setCreatedDate()
+    {
+        $this->Categories = date('Y-m-d H:i');
     }
 }

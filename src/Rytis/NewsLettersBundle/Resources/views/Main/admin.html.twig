@@ -15,6 +15,7 @@
 <th>Vardas</th>
 <th>El.Paštas</th>
 <th>Kategorijos</th>
+<th>Data</th>
 <th>Veiksmai</th>
 </tr>
 </thead>
@@ -25,6 +26,7 @@
             <td>  {{ v.Name }}</td>
             <td>  {{ v.Email }}</td>
             <td>  {{ v.Categories }}</td>
+            <td>  {{ v.CreatedDate }}</td>
             <td>
                 <a href="{{ path('RytisNewsLettersBundle_AdminLoad') }}" id="{{ k }}" class="EDIT"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                 <a href="{{ path('RytisNewsLettersBundle_AdminDelete') }}" id="{{ k }}" class="DELETE"><i class="fa fa-trash-o" aria-hidden="true"></i></i></a>

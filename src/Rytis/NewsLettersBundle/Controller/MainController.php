@@ -51,6 +51,9 @@ class MainController extends Controller
                         'class' => 'save-button'
                     )
             ))
+            ->add('CreatedDate', HiddenType::class, array(
+                'data'=>$letter->getCreatedDate()
+            ))
             ->getForm();
 
         return $this->render('RytisNewsLettersBundle:Main:index.html.twig', array(
@@ -195,6 +198,9 @@ class MainController extends Controller
             ))
             ->add('ID', HiddenType::class, array(
                 'data' => isset($id) ? $id : '0'
+            ))
+            ->add('CreatedDate', HiddenType::class, array(
+                'data'=>$data['CreatedDate']
             ))
             ->add('save', SubmitType::class, array(
                 'label' => 'Išsaugoti',
